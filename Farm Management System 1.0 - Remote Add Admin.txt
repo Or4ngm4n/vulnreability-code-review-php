@@ -6,7 +6,7 @@
 # Version: 1.0
 
 import requests 
-print ("FARM EXploit - Az7rb & Or4ng\n")
+print ("FARM EXploit - Or4ng\n")
 email = input("Email : ")
 user = input("user : ")
 pas  = input("password : ")
