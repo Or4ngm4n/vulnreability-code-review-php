@@ -1,0 +1,27 @@
+# Exploit Title: Online Book Store 1.0 - (process.php) SQL injection
+# Google Dork: N/A
+# Exploit Author: Or4nG.M4n
+# Vendor Homepage: https://projectworlds.in/free-projects/php-projects/online-book-store-project-in-php/
+# Software Link: https://github.com/projectworlds32/online-book-store-project-in-php/archive/master.zip
+# Version: 1.0
+# CVE: N/A
+
+* STEPS *
+1- go to any book and add it to cart
+2- after that u will redirected to /cart.php
+3- click on Go To Checkout /checkout.php
+4- inject your'e injecton code in any of this post parameters
+
+parameters : name  address city zip_code country
+
+
+	foreach($_SESSION['cart'] as $isbn => $qty){
+		$bookprice = getbookprice($isbn);
+		$query = "INSERT INTO order_items VALUES <====== 1
+		('$orderid', '$isbn', '$bookprice', '$qty')"; <====== 2
+		$result = mysqli_query($conn, $query); <====== 3
+		if(!$result){
+			echo "Insert value false!" . mysqli_error($conn2); <====== 4
+			exit;
+		}
+	}
